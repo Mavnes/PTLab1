@@ -27,4 +27,4 @@ requirements.txt; fi
       pycodestyle src test
    - name: Test with pytest
      run: |
-      PYTHONPATH=./:./src/ pytest test
+      python -m pytest test
