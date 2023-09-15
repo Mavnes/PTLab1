@@ -26,7 +26,7 @@ def main():
 
     debts = CalcDebt(students).calc()
     print("Students with debts: ", debts)
-    
+
 
 if __name__ == "__main__":
     main()

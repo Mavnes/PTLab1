@@ -2,7 +2,6 @@
 import pytest
 from src.Types import DataType
 from src.JsonDataReader import JsonDataReader
-import json
 
 
 class TestJsonDataReader:
@@ -10,17 +9,17 @@ class TestJsonDataReader:
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
         text = {
-                    "students": {
-                        "Иванов Константин Дмитриевич": {
-                            "математика": 91,
-                            "химия": 100
-                        },
-                        "Петров Петр Семенович": {
-                            "русский язык": 87,
-                            "литература": 78
-                        }
-                    }
+            "students": {
+                "Иванов Константин Дмитриевич": {
+                    "математика": 91,
+                    "химия": 100
+                },
+                "Петров Петр Семенович": {
+                    "русский язык": 87,
+                    "литература": 78
                 }
+            }
+        }
 
         data = {
             "Иванов Константин Дмитриевич": [
