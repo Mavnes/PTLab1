@@ -2,7 +2,8 @@
 import argparse
 import sys
 from CalcRating import CalcRating
-from TextDataReader import TextDataReader
+from CalcDebt import CalcDebt
+from JsonDataReader import JsonDataReader
 
 
 def get_path_from_arguments(args) -> str:
@@ -16,13 +17,16 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    reader = TextDataReader()
+    reader = JsonDataReader()
     students = reader.read(path)
     print("Students: ", students)
 
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
 
+    debts = CalcDebt(students).calc()
+    print("Students with debts: ", debts)
+    
 
 if __name__ == "__main__":
     main()
