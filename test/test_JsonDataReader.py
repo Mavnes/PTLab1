@@ -2,6 +2,7 @@
 import pytest
 from src.Types import DataType
 from src.JsonDataReader import JsonDataReader
+import json
 
 
 class TestJsonDataReader:
