@@ -60,11 +60,13 @@ class TestCalcDebt:
 
         return data, debts_count
 
-    def test_init_calc_debt(self, input_data: tuple[list[DataType], list]) -> None:
+    def test_init_calc_debt(self, input_data: tuple[list[DataType], list]) \
+            -> None:
         for data in input_data[0]:
             assert data == CalcDebt(data).data
 
-    def test_calc(self, input_data: tuple[list[DataType], list]) -> None:
+    def test_calc(self, input_data: tuple[list[DataType], list]) \
+            -> None:
         debts = []
         for i, data in enumerate(input_data[0]):
             assert CalcDebt(data).calc() == input_data[1][i]
