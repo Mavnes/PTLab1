@@ -28,8 +28,7 @@ def read_data(path: str) -> DataType:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    reader = JsonDataReader()
-    students = reader.read(path)
+    students = read_data(path)
     print("Students: ", students)
 
     rating = CalcRating(students).calc()
