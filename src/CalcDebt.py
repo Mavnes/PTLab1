@@ -9,14 +9,11 @@ class CalcDebt:
         self.debt: int = 0
 
     def marks_tolist(self, marks):
-        list = []
         for mark in marks:
-            list.append(mark[1])
-        return list
+            yield mark[1]
 
     def calc(self) -> int:
         for _, marks in self.data.items():
-            list = self.marks_tolist(marks)
-            if any(mark < 61 for mark in list):
+            if any(mark < 61 for mark in self.marks_tolist(marks)):
                 self.debt += 1
         return self.debt
